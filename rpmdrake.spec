@@ -79,6 +79,7 @@ Exec=/usr/sbin/rpmdrake
 Icon=rpmdrake
 Type=Application
 Categories=GTK;X-MandrivaLinux-System-Configuration-Packaging;Settings;PackageManager;
+StartupNotify=false
 EOF
 
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-rpmdrake-root.desktop << EOF
@@ -89,6 +90,7 @@ Exec=/usr/bin/rpmdrake
 Icon=rpmdrake
 Type=Application
 Categories=GTK;X-MandrivaLinux-System-Configuration-Packaging;Settings;PackageManager;
+StartupNotify=false
 EOF
 
 # for consolehelper config (#29696)
