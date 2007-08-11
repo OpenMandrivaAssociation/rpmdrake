@@ -18,7 +18,7 @@ License: GPL
 Source0: %name-%version.tar.bz2
 Summary: Mandriva Linux graphical front end for sofware installation/removal
 Requires: perl-MDK-Common >= 1.1.18-2mdk
-Requires: urpmi >= 4.9.30
+Requires: urpmi >= 4.9.31
 Requires: perl-URPM >= 1.58
 Requires: drakxtools >= 10.4.112-1mdv2007.1
 Requires: rpmtools >= 5.0.5
