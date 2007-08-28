@@ -148,7 +148,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/*.pm
 %{perl_vendorlib}/Rpmdrake
 %{_menudir}/%{name}
-%{_datadir}/applications/mandriva-*.desktop
+%{_datadir}/applications/*.desktop
 %{_iconsdir}/*.png
 %{_miconsdir}/*.png
 %{_liconsdir}/*.png
