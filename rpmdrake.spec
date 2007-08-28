@@ -70,28 +70,6 @@ make OPTIMIZE="$RPM_OPT_FLAGS -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
 
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
 cp %{name}.menu $RPM_BUILD_ROOT%{_menudir}/%{name}
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-rpmdrake.desktop << EOF
-[Desktop Entry]
-Name=Browse Available Software
-Comment=A graphical front end for installing, removing and updating packages
-Exec=/usr/sbin/rpmdrake
-Icon=rpmdrake
-Type=Application
-Categories=GTK;X-MandrivaLinux-System-Configuration-Packaging;Settings;PackageManager;
-StartupNotify=false
-EOF
-
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-rpmdrake-root.desktop << EOF
-[Desktop Entry]
-Name=Install, Remove & Update Software
-Comment=A graphical front end for installing, removing and updating packages
-Exec=/usr/bin/rpmdrake
-Icon=rpmdrake
-Type=Application
-Categories=GTK;X-MandrivaLinux-System-Configuration-Packaging;Settings;PackageManager;
-StartupNotify=false
-EOF
 
 # for consolehelper config (#29696)
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pam.d
