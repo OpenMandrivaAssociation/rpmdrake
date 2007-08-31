@@ -113,6 +113,16 @@ ln -sf %{_sysconfdir}/pam.d/rpmdrake-remove $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/
 ln -sf %{_sysconfdir}/security/console.apps/rpmdrake-remove \
         $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps/drakrpm-remove
 
+# edit media
+cp -af $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/{rpmdrake,drakrpm-edit-media}
+cat > $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps/drakrpm-edit-media <<EOF
+USER=root
+PROGRAM=/usr/sbin/drakrpm-edit-media
+FALLBACK=false
+SESSION=true
+EOF
+ln -sf %{_bindir}/consolehelper $RPM_BUILD_ROOT%{_bindir}/drakrpm-edit-media
+
 mkdir -p $RPM_BUILD_ROOT{%{_miconsdir},%{_liconsdir},%{_iconsdir}/hicolor,%{_iconsdir}/hicolor/{16x16,32x32,48x48},%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps}
 for i in rpmdrake rpmdrake-remove mandrivaupdate edit-urpm-sources; do
   cp pixmaps/${i}16.png $RPM_BUILD_ROOT%{_miconsdir}/${i}.png
@@ -150,9 +160,11 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/pam.d/rpmdrake
 %config(noreplace) %{_sysconfdir}/pam.d/mandrivaupdate
 %config(noreplace) %{_sysconfdir}/pam.d/rpmdrake-remove
+%config(noreplace) %{_sysconfdir}/pam.d/drakrpm-edit-media
 %config(noreplace) %{_sysconfdir}/security/console.apps/rpmdrake
 %config(noreplace) %{_sysconfdir}/security/console.apps/MandrivaUpdate
 %config(noreplace) %{_sysconfdir}/security/console.apps/rpmdrake-remove
+%config(noreplace) %{_sysconfdir}/security/console.apps/drakrpm-edit-media
 # all these in sysconfdir are symlinks
 %{_sysconfdir}/pam.d/drakrpm
 %{_sysconfdir}/pam.d/drakrpm-remove
