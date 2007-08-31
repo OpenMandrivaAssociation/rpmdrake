@@ -8,7 +8,7 @@
 
 %define name rpmdrake
 %define version 3.83
-%define release %mkrel 2
+%define release %mkrel 3
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
 Name: %{name}
@@ -122,6 +122,9 @@ FALLBACK=false
 SESSION=true
 EOF
 ln -sf %{_bindir}/consolehelper $RPM_BUILD_ROOT%{_bindir}/drakrpm-edit-media
+# XXX - should be changed upstream
+sed -i -e "s,%{_sbindir}/edit-urpm-sources.pl,%{_bindir}/drakrpm-edit-media," \
+        %{buildroot}%{_datadir}/applications/rpmdrake-sources.desktop
 
 mkdir -p $RPM_BUILD_ROOT{%{_miconsdir},%{_liconsdir},%{_iconsdir}/hicolor,%{_iconsdir}/hicolor/{16x16,32x32,48x48},%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps}
 for i in rpmdrake rpmdrake-remove mandrivaupdate edit-urpm-sources; do
