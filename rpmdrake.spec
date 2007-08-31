@@ -89,8 +89,10 @@ PROGRAM=/usr/sbin/rpmdrake
 FALLBACK=false
 SESSION=true
 EOF
+# Rights Delegation spec for MDV2008 says MandrivaUpdate should ask for
+# user password, not root password
 cat > $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps/MandrivaUpdate <<EOF
-USER=root
+USER=<user>
 PROGRAM=/usr/sbin/MandrivaUpdate
 FALLBACK=false
 SESSION=true
