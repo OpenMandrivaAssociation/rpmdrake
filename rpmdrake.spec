@@ -27,7 +27,7 @@ Requires: perl-Gtk2 >= 1.054-1mdk
 Requires: perl-Locale-gettext >= 1.01-7mdk
 Requires: mdv-rpm-summary
 # need the consolehelper basic pam config files
-Requires: usermode-consoleonly >= 1.92-4mdv
+Requires: usermode-consoleonly >= 1.92-4mdv2008.0
 # for icons:
 Requires: desktop-common-data
 # for now, packdrake (5.0.9) works better with this
