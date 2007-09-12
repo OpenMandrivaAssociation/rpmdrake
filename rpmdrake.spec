@@ -8,7 +8,7 @@
 
 %define name rpmdrake
 %define version 3.93
-%define release %mkrel 1
+%define release %mkrel 2
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
 Name: %{name}
@@ -26,6 +26,8 @@ Requires: packdrake >= 5.0.5
 Requires: perl-Gtk2 >= 1.054-1mdk
 Requires: perl-Locale-gettext >= 1.01-7mdk
 Requires: mdv-rpm-summary
+# need the consolehelper basic pam config files
+Requires: usermode-consoleonly >= 1.92-4mdv
 # for icons:
 Requires: desktop-common-data
 # for now, packdrake (5.0.9) works better with this
@@ -73,14 +75,7 @@ cp %{name}.menu $RPM_BUILD_ROOT%{_menudir}/%{name}
 
 # for consolehelper config (#29696)
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pam.d
-cat > $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/rpmdrake <<EOF
-#%PAM-1.0
-auth       sufficient   pam_rootok.so
-auth       required     pam_console.so
-auth       include      system-auth
-account    required     pam_permit.so
-session    optional     pam_xauth.so
-EOF
+ln -sf %{_sysconfdir}/pam.d/mandriva-simple-auth %{buildroot}%{_sysconfdir}/pam.d/rpmdrake
 cp -af $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/{rpmdrake,mandrivaupdate}
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps
 cat > $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps/rpmdrake <<EOF
