@@ -7,8 +7,8 @@
 ##################################################################
 
 %define name rpmdrake
-%define version 3.97
-%define release %mkrel 2
+%define version 3.98
+%define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
 Name: %{name}
@@ -147,10 +147,13 @@ rm -rf $RPM_BUILD_ROOT
 %post 
 %update_menus
 %update_icon_cache hicolor
+%update_mime_database
+%update_desktop_database
 
 %postun
 %clean_menus
 %clean_icon_cache hicolor
+%clean_mime_database
 
 %files -f rpmdrake.lang
 %defattr(-, root, root)
@@ -180,6 +183,8 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/*.pm
 %{perl_vendorlib}/Rpmdrake
 %{_menudir}/%{name}
+%{_datadir}/mimelnk/application/x-urpmi-media.desktop
+%{_datadir}/mime/packages/urpmi-media.xml
 %{_datadir}/applications/*.desktop
 %{_iconsdir}/*.png
 %{_miconsdir}/*.png
