@@ -154,6 +154,7 @@ rm -rf $RPM_BUILD_ROOT
 %clean_menus
 %clean_icon_cache hicolor
 %clean_mime_database
+%clean_desktop_database
 
 %files -f rpmdrake.lang
 %defattr(-, root, root)
