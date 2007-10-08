@@ -7,7 +7,7 @@
 ##################################################################
 
 %define name rpmdrake
-%define version 3.117
+%define version 3.118
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
@@ -48,14 +48,6 @@ Mandriva Linux system; it has 3 different modes:
 - MandrivaUpdate (software packages updates).
 
 A fourth program manages the media (add, remove, edit).
-
-%package -n park-rpmdrake
-Summary: Configure and update rpms on a park
-Group: System/Configuration/Packaging
-Requires: rsync scanssh perl-Expect rpmdrake
-
-%description -n park-rpmdrake
-Configure and update rpms on a park of hosts. The backend is parallel urpmi.
 
 %prep
 rm -rf $RPM_BUILD_ROOT
@@ -196,9 +188,4 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_var}/lib/urpmi/compssUsers.flat
 %{perl_vendorarch}/auto/*
 %{perl_vendorarch}/*.pm
-
-%files -n park-rpmdrake
-%defattr(-,root,root)
-%{_sbindir}/park-rpmdrake
-
 
