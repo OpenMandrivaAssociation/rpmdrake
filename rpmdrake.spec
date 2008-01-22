@@ -7,8 +7,8 @@
 ##################################################################
 
 %define name rpmdrake
-%define version 3.125
-%define release %mkrel 2
+%define version 3.126
+%define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
 Name: %{name}
