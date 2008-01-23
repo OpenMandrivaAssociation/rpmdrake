@@ -7,7 +7,7 @@
 ##################################################################
 
 %define name rpmdrake
-%define version 3.127
+%define version 3.128
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
@@ -15,7 +15,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 License: GPL
-Source0: %name-%version.tar.bz2
+Source0: %name-%version.tar.lzma
 Summary: Mandriva Linux graphical front end for sofware installation/removal
 Requires: perl-MDK-Common >= 1.1.18-2mdk
 Requires: urpmi >= 4.10.16
