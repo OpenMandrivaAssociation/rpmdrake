@@ -7,7 +7,7 @@
 ##################################################################
 
 %define name rpmdrake
-%define version 3.129
+%define version 3.130
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
@@ -32,8 +32,9 @@ Requires: usermode-consoleonly >= 1.92-4mdv2008.0
 Requires: desktop-common-data
 # for now, packdrake (5.0.9) works better with this
 Requires: perl-Compress-Zlib >= 1.33
-BuildRequires: curl-devel >= 7.12.1-1mdk gettext openssl-devel perl-devel intltool
+BuildRequires: gettext perl-devel intltool
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildArch: noarch
 Group: System/Configuration/Packaging
 URL: http://cvs.mandriva.com/cgi-bin/cvsweb.cgi/soft/rpmdrake/
 Obsoletes: MandrakeUpdate
@@ -186,6 +187,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/*.png
 %{_iconsdir}/hicolor/48x48/apps/*.png
 %ghost %{_var}/lib/urpmi/compssUsers.flat
-%{perl_vendorarch}/auto/*
-%{perl_vendorarch}/*.pm
 
