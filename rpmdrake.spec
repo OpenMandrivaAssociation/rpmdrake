@@ -63,9 +63,6 @@ make OPTIMIZE="$RPM_OPT_FLAGS -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
 
 %find_lang rpmdrake
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cp %{name}.menu $RPM_BUILD_ROOT%{_menudir}/%{name}
-
 # for consolehelper config (#29696)
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pam.d
 ln -sf %{_sysconfdir}/pam.d/mandriva-simple-auth %{buildroot}%{_sysconfdir}/pam.d/rpmdrake
@@ -176,7 +173,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{perl_vendorlib}/*.pm
 %{perl_vendorlib}/Rpmdrake
-%{_menudir}/%{name}
 %{_datadir}/mimelnk/application/x-urpmi-media.desktop
 %{_datadir}/mime/packages/urpmi-media.xml
 %{_datadir}/applications/*.desktop
