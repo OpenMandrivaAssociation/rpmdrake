@@ -59,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 make OPTIMIZE="$RPM_OPT_FLAGS -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
 
 %install
+rm -fr $RPM_BUILD_ROOT
 %makeinstall_std PREFIX=%buildroot/%{_prefix}
 
 %find_lang rpmdrake
