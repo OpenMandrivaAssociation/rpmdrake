@@ -7,7 +7,7 @@
 ##################################################################
 
 %define name rpmdrake
-%define version 4.0
+%define version 4.1
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
