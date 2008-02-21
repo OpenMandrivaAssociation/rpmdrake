@@ -20,7 +20,7 @@ Summary: Mandriva Linux graphical front end for sofware installation/removal
 Requires: perl-MDK-Common >= 1.1.18-2mdk
 Requires: urpmi >= 5.1
 Requires: perl-URPM >= 3.0
-Requires: drakxtools >= 10.6.18
+Requires: drakxtools >= 10.6.21
 Requires: rpmtools >= 5.0.5
 Requires: packdrake >= 5.0.5
 Requires: perl-Gtk2 >= 1.054-1mdk
