@@ -32,7 +32,7 @@ BuildRequires: gettext perl-devel intltool
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 Group: System/Configuration/Packaging
-URL: http://cvs.mandriva.com/cgi-bin/cvsweb.cgi/soft/rpmdrake/
+URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/rpmdrake/
 Obsoletes: MandrakeUpdate
 Provides: MandrakeUpdate
 Conflicts: drakconf < 10.1-4mdk
