@@ -21,8 +21,6 @@ Requires: perl-MDK-Common >= 1.1.18-2mdk
 Requires: urpmi >= 5.1
 Requires: perl-URPM >= 3.0
 Requires: drakxtools >= 10.6.21
-Requires: rpmtools >= 5.0.5
-Requires: packdrake >= 5.0.5
 Requires: perl-Gtk2 >= 1.054-1mdk
 Requires: perl-Locale-gettext >= 1.01-7mdk
 Requires: mdv-rpm-summary
@@ -30,8 +28,6 @@ Requires: mdv-rpm-summary
 Requires: usermode-consoleonly >= 1.92-4mdv2008.0
 # for icons:
 Requires: desktop-common-data
-# for now, packdrake (5.0.9) works better with this
-Requires: perl-Compress-Zlib >= 1.33
 BuildRequires: gettext perl-devel intltool
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
