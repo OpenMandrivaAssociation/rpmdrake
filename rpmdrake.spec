@@ -15,6 +15,7 @@ Requires: perl-URPM >= 3.0
 Requires: drakxtools >= 10.6.21
 Requires: perl-Gtk2 >= 1.054-1mdk
 Requires: perl-Gtk2-SourceView
+Requires: perl-File-MimeInfo
 Requires: perl-Locale-gettext >= 1.01-7mdk
 # for translations:
 Requires: mdv-rpm-summary
