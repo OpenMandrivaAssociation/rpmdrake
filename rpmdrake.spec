@@ -141,7 +141,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f rpmdrake.lang
 %defattr(-, root, root)
-%doc COPYING AUTHORS README 
+%doc AUTHORS COPYING NEWS README 
 %config(noreplace) %{_sysconfdir}/pam.d/rpmdrake
 %config(noreplace) %{_sysconfdir}/pam.d/mandrivaupdate
 %config(noreplace) %{_sysconfdir}/pam.d/rpmdrake-remove
