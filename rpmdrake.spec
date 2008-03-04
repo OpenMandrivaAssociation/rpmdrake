@@ -34,13 +34,17 @@ Provides: MandrakeUpdate
 Conflicts: drakconf < 10.1-4mdk
 
 %description
-rpmdrake is a simple graphical frontend to manage software packages on a
-Mandriva Linux system; it has 3 different modes:
-- software packages installation;
-- software packages removal;
-- MandrivaUpdate (software packages updates).
+This package contains the Mandriva graphical software manipulation
+tools.
 
-A fourth program manages the media (add, remove, edit).
+Rpmdrake provides a simple interface that makes it easy to install
+and remove software.
+
+MandrivaUpdate is a single-purpose application for keeping your system
+up to date with the latest official updates.
+
+There is also a tool for configuring package sources (medias), which can
+be run independently or accessed from within rpmdrake.
 
 %prep
 rm -rf $RPM_BUILD_ROOT
