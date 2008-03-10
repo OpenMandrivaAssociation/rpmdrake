@@ -1,5 +1,5 @@
 %define name rpmdrake
-%define version 4.6
+%define version 4.6.1
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
