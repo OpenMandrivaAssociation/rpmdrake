@@ -11,12 +11,12 @@ Source0: %name-%version.tar.lzma
 Summary: Mandriva Linux graphical front end for sofware installation/removal
 Requires: perl-MDK-Common >= 1.1.18-2mdk
 Requires: urpmi >= 5.9
-Requires: perl-URPM >= 3.0
+Requires: perl-URPM >= 3.07-2
 Requires: drakxtools >= 10.6.21
-Requires: perl-Gtk2 >= 1.054-1mdk
-Requires: perl-Locale-gettext >= 1.01-7mdk
+Requires: perl-Gtk2 >= 1.172-2
+Requires: perl-Locale-gettext >= 1.05-6
 # lazy load modules:
-Requires: perl-Gtk2-SourceView
+Requires: perl-Gtk2-SourceView >= 1.000-7
 Requires: perl-File-MimeInfo
 # for translations:
 Requires: mdv-rpm-summary
