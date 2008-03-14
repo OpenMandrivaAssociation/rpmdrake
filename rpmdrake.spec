@@ -1,5 +1,5 @@
 %define name rpmdrake
-%define version 4.6.1
+%define version 4.6.2
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
@@ -124,9 +124,6 @@ ln -sf %{_sysconfdir}/security/console.apps/MandrivaUpdate %{buildroot}%{_syscon
 ln -sf %{_sysconfdir}/pam.d/rpmdrake %{buildroot}%{_sysconfdir}/pam.d/drakrpm
 ln -sf %{_sysconfdir}/security/console.apps/rpmdrake %{buildroot}%{_sysconfdir}/security/console.apps/drakrpm
 
-# bloody RPM..
-mkdir -p $RPM_BUILD_ROOT/var/lib/urpmi
-touch $RPM_BUILD_ROOT/var/lib/urpmi/compssUsers.flat
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -179,5 +176,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/16x16/apps/*.png
 %{_iconsdir}/hicolor/32x32/apps/*.png
 %{_iconsdir}/hicolor/48x48/apps/*.png
-%ghost %{_var}/lib/urpmi/compssUsers.flat
 
