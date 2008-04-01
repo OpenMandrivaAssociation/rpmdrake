@@ -19,7 +19,7 @@ Requires: perl-Locale-gettext >= 1.05-6
 Requires: perl-Gtk2-SourceView >= 1.000-7
 Requires: perl-File-MimeInfo
 # for translations:
-Requires: mdv-rpm-summary
+Suggests: mdv-rpm-summary
 # need the consolehelper basic pam config files
 Requires: usermode-consoleonly >= 1.92-4mdv2008.0
 # for icons:
