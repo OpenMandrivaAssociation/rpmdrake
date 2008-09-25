@@ -28,7 +28,7 @@ BuildRequires: gettext perl-devel intltool
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 Group: System/Configuration/Packaging
-URL: http://svn.mandriva.com/cgi-bin/viewvc.cgi/soft/rpmdrake/
+URL: http://wiki.mandriva.com/en/Installing_and_removing_software
 Obsoletes: MandrakeUpdate
 Provides: MandrakeUpdate
 Conflicts: drakconf < 10.1-4mdk
