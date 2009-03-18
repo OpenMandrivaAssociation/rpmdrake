@@ -1,5 +1,5 @@
 %define name rpmdrake
-%define version 5.9
+%define version 5.10
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
@@ -8,7 +8,6 @@ Version: %{version}
 Release: %{release}
 License: GPL
 Source0: %name-%version.tar.lzma
-Patch0:	 rpmdrake-5.9-fix-build_vs_pt_BR.diff
 Summary: Mandriva Linux graphical front end for sofware installation/removal
 Requires: perl-MDK-Common >= 1.1.18-2mdk
 Requires: urpmi > 6.18
@@ -51,7 +50,6 @@ be run independently or accessed from within rpmdrake.
 rm -rf $RPM_BUILD_ROOT
 
 %setup -q
-%patch0 -p0
 
 %build
 make OPTIMIZE="$RPM_OPT_FLAGS -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
