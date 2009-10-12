@@ -1,6 +1,6 @@
 %define name rpmdrake
 %define version 5.21
-%define release %mkrel 1
+%define release %mkrel 2
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
 Name: %{name}
@@ -12,7 +12,7 @@ Summary: Mandriva Linux graphical front end for sofware installation/removal
 Requires: perl-MDK-Common >= 1.1.18-2mdk
 Requires: urpmi > 6.18
 Requires: perl-URPM >= 3.07-2
-Requires: drakxtools >= 12.18
+Requires: drakxtools >= 12.53
 Requires: perl-Gtk2 >= 1.172-2
 Requires: perl-Locale-gettext >= 1.05-6
 # lazy load modules:
