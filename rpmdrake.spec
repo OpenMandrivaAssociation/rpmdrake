@@ -1,6 +1,6 @@
 %define name rpmdrake
 %define version 5.24
-%define release %mkrel 1
+%define release %mkrel 2
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
 Name: %{name}
@@ -16,7 +16,7 @@ Requires: drakxtools >= 12.64
 Requires: perl-Gtk2 >= 1.172-2
 Requires: perl-Locale-gettext >= 1.05-6
 # lazy load modules:
-Requires: perl-Gtk2-SourceView >= 1.000-7
+Requires: perl-Gtk2-SourceView2 >= 1.000-7
 Requires: perl-File-MimeInfo
 # for translations:
 Suggests: mdv-rpm-summary
