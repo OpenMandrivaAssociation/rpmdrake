@@ -1,5 +1,5 @@
 %define name rpmdrake
-%define version 5.26
+%define version 5.26.1
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
@@ -25,7 +25,7 @@ Requires: usermode-consoleonly >= 1.92-4mdv2008.0
 # for icons:
 Requires: desktop-common-data
 BuildRequires: gettext perl-devel intltool
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/%{name}-%{version}
 BuildArch: noarch
 Group: System/Configuration/Packaging
 URL: http://wiki.mandriva.com/en/Installing_and_removing_software
@@ -47,7 +47,7 @@ There is also a tool for configuring package sources (medias), which can
 be run independently or accessed from within rpmdrake.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %setup -q
 
@@ -55,17 +55,17 @@ rm -rf $RPM_BUILD_ROOT
 make OPTIMIZE="$RPM_OPT_FLAGS -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
 
 %install
-rm -fr $RPM_BUILD_ROOT
+rm -fr %{buildroot}
 %makeinstall_std PREFIX=%buildroot/%{_prefix}
 
 %find_lang rpmdrake
 
 # for consolehelper config (#29696)
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pam.d
+mkdir -p %{buildroot}%{_sysconfdir}/pam.d
 ln -sf %{_sysconfdir}/pam.d/mandriva-simple-auth %{buildroot}%{_sysconfdir}/pam.d/rpmdrake
-cp -af $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/{rpmdrake,mandrivaupdate}
-mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps
-cat > $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps/rpmdrake <<EOF
+cp -af %{buildroot}%{_sysconfdir}/pam.d/{rpmdrake,mandrivaupdate}
+mkdir -p %{buildroot}%{_sysconfdir}/security/console.apps
+cat > %{buildroot}%{_sysconfdir}/security/console.apps/rpmdrake <<EOF
 USER=root
 PROGRAM=/usr/sbin/rpmdrake
 FALLBACK=false
@@ -73,7 +73,7 @@ SESSION=true
 EOF
 # Rights Delegation spec for MDV2008 says MandrivaUpdate should ask for
 # user password, not root password
-cat > $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps/MandrivaUpdate <<EOF
+cat > %{buildroot}%{_sysconfdir}/security/console.apps/MandrivaUpdate <<EOF
 USER=<user>
 PROGRAM=/usr/sbin/MandrivaUpdate
 FALLBACK=false
@@ -81,26 +81,26 @@ SESSION=true
 EOF
 
 # edit media
-cp -af $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/{rpmdrake,drakrpm-edit-media}
-cat > $RPM_BUILD_ROOT%{_sysconfdir}/security/console.apps/drakrpm-edit-media <<EOF
+cp -af %{buildroot}%{_sysconfdir}/pam.d/{rpmdrake,drakrpm-edit-media}
+cat > %{buildroot}%{_sysconfdir}/security/console.apps/drakrpm-edit-media <<EOF
 USER=root
 PROGRAM=/usr/sbin/drakrpm-edit-media
 FALLBACK=false
 SESSION=true
 EOF
-ln -sf %{_bindir}/consolehelper $RPM_BUILD_ROOT%{_bindir}/drakrpm-edit-media
+ln -sf %{_bindir}/consolehelper %{buildroot}%{_bindir}/drakrpm-edit-media
 # XXX - should be changed upstream
 sed -i -e "s,%{_sbindir}/edit-urpm-sources.pl,%{_bindir}/drakrpm-edit-media," \
         %{buildroot}%{_datadir}/applications/rpmdrake-sources.desktop
 
-mkdir -p $RPM_BUILD_ROOT{%{_miconsdir},%{_liconsdir},%{_iconsdir}/hicolor,%{_iconsdir}/hicolor/{16x16,32x32,48x48},%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps}
+mkdir -p %{buildroot}{%{_miconsdir},%{_liconsdir},%{_iconsdir}/hicolor,%{_iconsdir}/hicolor/{16x16,32x32,48x48},%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps}
 for i in rpmdrake mandrivaupdate edit-urpm-sources; do
-  cp pixmaps/${i}16.png $RPM_BUILD_ROOT%{_miconsdir}/${i}.png
-  cp pixmaps/${i}32.png $RPM_BUILD_ROOT%{_iconsdir}/${i}.png
-  cp pixmaps/${i}48.png $RPM_BUILD_ROOT%{_liconsdir}/${i}.png
-  cp pixmaps/${i}16.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/16x16/apps/${i}.png
-  cp pixmaps/${i}32.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/32x32/apps/${i}.png
-  cp pixmaps/${i}48.png $RPM_BUILD_ROOT%{_iconsdir}/hicolor/48x48/apps/${i}.png
+  cp pixmaps/${i}16.png %{buildroot}%{_miconsdir}/${i}.png
+  cp pixmaps/${i}32.png %{buildroot}%{_iconsdir}/${i}.png
+  cp pixmaps/${i}48.png %{buildroot}%{_liconsdir}/${i}.png
+  cp pixmaps/${i}16.png %{buildroot}%{_iconsdir}/hicolor/16x16/apps/${i}.png
+  cp pixmaps/${i}32.png %{buildroot}%{_iconsdir}/hicolor/32x32/apps/${i}.png
+  cp pixmaps/${i}48.png %{buildroot}%{_iconsdir}/hicolor/48x48/apps/${i}.png
 done
 ln -sf %{_bindir}/consolehelper %{buildroot}%{_bindir}/rpmdrake
 ln -sf %{_bindir}/consolehelper %{buildroot}%{_bindir}/MandrivaUpdate
@@ -111,7 +111,7 @@ ln -sf %{_sysconfdir}/security/console.apps/rpmdrake %{buildroot}%{_sysconfdir}/
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post 
