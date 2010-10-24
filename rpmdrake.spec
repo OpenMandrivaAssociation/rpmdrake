@@ -24,7 +24,7 @@ Suggests: mdv-rpm-summary
 Requires: usermode-consoleonly >= 1.92-4mdv2008.0
 # for icons:
 Requires: desktop-common-data
-BuildRequires: gettext perl-devel intltool
+BuildRequires: gettext perl-devel intltool perl_checker
 BuildRoot: %{_tmppath}/%{name}-%{version}
 BuildArch: noarch
 Group: System/Configuration/Packaging
