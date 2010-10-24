@@ -1,5 +1,5 @@
 %define name rpmdrake
-%define version 5.26.4
+%define version 5.26.5
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
@@ -109,6 +109,9 @@ ln -sf %{_sysconfdir}/security/console.apps/MandrivaUpdate %{buildroot}%{_syscon
 ln -sf %{_sysconfdir}/pam.d/rpmdrake %{buildroot}%{_sysconfdir}/pam.d/drakrpm
 ln -sf %{_sysconfdir}/security/console.apps/rpmdrake %{buildroot}%{_sysconfdir}/security/console.apps/drakrpm
 
+
+%check
+%make check
 
 %clean
 rm -rf %{buildroot}
