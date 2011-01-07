@@ -47,8 +47,6 @@ There is also a tool for configuring package sources (medias), which can
 be run independently or accessed from within rpmdrake.
 
 %prep
-rm -rf %{buildroot}
-
 %setup -q
 
 %build
