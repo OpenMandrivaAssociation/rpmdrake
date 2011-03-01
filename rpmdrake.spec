@@ -1,37 +1,41 @@
 %define name rpmdrake
-%define version 5.26.6
+%define version 5.26.7
 %define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
-Name: %{name}
-Version: %{version}
-Release: %{release}
-License: GPL
-Source0: %name-%version.tar.xz
-Summary: Mandriva Linux graphical front end for sofware installation/removal
-Requires: perl-MDK-Common >= 1.1.18-2mdk
-Requires: urpmi > 6.18
-Requires: perl-URPM >= 3.07-2
-Requires: drakxtools >= 12.64
-Requires: perl-Gtk2 >= 1.172-2
-Requires: perl-Locale-gettext >= 1.05-6
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+
+Summary:	Mandriva Linux graphical front end for sofware installation/removal
+License:	GPL
+Group:		System/Configuration/Packaging
+URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
+
+Source0:	%name-%version.tar.xz
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	gettext perl-devel intltool perl_checker
+BuildArch:	noarch
+
+Requires:	perl-MDK-Common >= 1.1.18-2mdk
+Requires:	urpmi > 6.18
+Requires:	perl-URPM >= 3.07-2
+Requires:	drakxtools >= 12.64
+Requires:	perl-Gtk2 >= 1.172-2
+Requires:	perl-Locale-gettext >= 1.05-6
 # lazy load modules:
-Requires: perl-Gtk2-SourceView2
-Requires: perl-File-MimeInfo
+Requires:	perl-Gtk2-SourceView2
+Requires:	perl-File-MimeInfo
 # for translations:
-Suggests: mdv-rpm-summary
+Suggests:	mdv-rpm-summary
 # need the consolehelper basic pam config files
-Requires: usermode-consoleonly >= 1.92-4mdv2008.0
+Requires:	usermode-consoleonly >= 1.92-4mdv2008.0
 # for icons:
-Requires: desktop-common-data
-BuildRequires: gettext perl-devel intltool perl_checker
-BuildRoot: %{_tmppath}/%{name}-%{version}
-BuildArch: noarch
-Group: System/Configuration/Packaging
-URL: http://wiki.mandriva.com/en/Installing_and_removing_software
-Obsoletes: MandrakeUpdate
-Provides: MandrakeUpdate
-Conflicts: drakconf < 10.1-4mdk
+Requires:	desktop-common-data
+Obsoletes:	MandrakeUpdate
+Provides:	MandrakeUpdate
+Conflicts:	drakconf < 10.1-4mdk
 
 %description
 This package contains the Mandriva graphical software manipulation
@@ -162,4 +166,3 @@ rm -rf %{buildroot}
 %{_iconsdir}/hicolor/16x16/apps/*.png
 %{_iconsdir}/hicolor/32x32/apps/*.png
 %{_iconsdir}/hicolor/48x48/apps/*.png
-
