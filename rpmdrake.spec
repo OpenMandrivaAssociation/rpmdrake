@@ -9,9 +9,8 @@ License:	GPLv2+
 Group:		System/Configuration/Packaging
 URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 
-Source0:	%name-%version.tar.xz
+Source0:	%{name}-%{version}.tar.xz
 
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:	gettext perl-devel intltool perl_checker
 BuildArch:	noarch
 
@@ -54,7 +53,6 @@ be run independently or accessed from within rpmdrake.
 make OPTIMIZE="$RPM_OPT_FLAGS -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
 
 %install
-rm -fr %{buildroot}
 %makeinstall_std PREFIX=%buildroot/%{_prefix}
 
 %find_lang rpmdrake
@@ -112,27 +110,7 @@ ln -sf %{_sysconfdir}/security/console.apps/rpmdrake %{buildroot}%{_sysconfdir}/
 %check
 %make check
 
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post 
-%update_menus
-%update_icon_cache hicolor
-%update_mime_database
-%update_desktop_database
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%clean_icon_cache hicolor
-%clean_mime_database
-%clean_desktop_database
-%endif
-
 %files -f rpmdrake.lang
-%defattr(-, root, root)
 %doc AUTHORS COPYING NEWS README 
 %config(noreplace) %{_sysconfdir}/pam.d/rpmdrake
 %config(noreplace) %{_sysconfdir}/pam.d/mandrivaupdate
