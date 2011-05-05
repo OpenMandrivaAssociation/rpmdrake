@@ -1,11 +1,8 @@
-%define name rpmdrake
-%define version 5.26.7
-%define release %mkrel 1
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		rpmdrake
+Version:	5.26.8
+Release:	1
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
 License:	GPL
