@@ -5,7 +5,7 @@ Version:	5.26.8
 Release:	1
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
-License:	GPL
+License:	GPLv2+
 Group:		System/Configuration/Packaging
 URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 
