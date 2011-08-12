@@ -1,8 +1,8 @@
 %define _requires_exceptions perl(Rpmdrake::widgets)
 
 Name:		rpmdrake
-Version:	5.26.10
-Release:	1
+Version:	5.26.11
+Release:	0
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
 License:	GPLv2+
