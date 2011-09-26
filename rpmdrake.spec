@@ -3,7 +3,7 @@
 Name:		rpmdrake
 Version:	5.26.11
 %define	subrel	1
-Release:	0
+Release:	%mkrel 0
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
 License:	GPLv2+
