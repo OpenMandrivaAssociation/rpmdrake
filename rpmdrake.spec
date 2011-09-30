@@ -2,7 +2,7 @@
 
 Name:		rpmdrake
 Version:	5.26.11
-%define	subrel	1
+%define	subrel	3
 Release:	%mkrel 0
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
@@ -12,6 +12,7 @@ URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 
 Source0:	%{name}-%{version}.tar.xz
 Patch0:		rpmdrake-5.26.11.display.list.patch
+Patch1:		rpmdrake-5.26.11.display.list.3party.patch
 
 BuildRequires:	gettext perl-devel intltool perl_checker
 BuildArch:	noarch
