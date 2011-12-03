@@ -23,6 +23,8 @@ Requires:	perl-URPM >= 3.07-2
 Requires:	drakxtools >= 12.64
 Requires:	perl-Gtk2 >= 1.172-2
 Requires:	perl-Locale-gettext >= 1.05-6
+# needs pango-modules due to fonts rendering
+Requires:	pango-modules
 # lazy load modules:
 Requires:	perl-Gtk2-SourceView2
 Requires:	perl-File-MimeInfo
