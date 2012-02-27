@@ -11,9 +11,6 @@ Group:		System/Configuration/Packaging
 URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 
 Source0:	%{name}-%{version}.tar.xz
-#Patch0:		rpmdrake-5.26.11.display.list.patch
-#Patch1:		rpmdrake-5.26.11.display.list.3party.patch
-#Patch2:		ru.po.diff
 BuildRequires:	gettext perl-devel intltool perl_checker
 BuildArch:	noarch
 
@@ -53,7 +50,6 @@ be run independently or accessed from within rpmdrake.
 
 %prep
 %setup -q
-#%apply_patches
 
 %build
 make OPTIMIZE="$RPM_OPT_FLAGS -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
