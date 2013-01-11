@@ -23,6 +23,7 @@ BuildRequires:	gettext
 BuildRequires:	perl-devel
 BuildRequires:	intltool
 BuildRequires:	perl_checker
+BuildRequires:	perl-JSON-pp
 BuildArch:	noarch
 
 Requires:	perl-MDK-Common
