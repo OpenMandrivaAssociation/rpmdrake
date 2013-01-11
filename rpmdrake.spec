@@ -6,7 +6,7 @@
 
 Name:		rpmdrake
 Version:	5.26.12
-Release:	5
+Release:	6
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
 License:	GPLv2+
