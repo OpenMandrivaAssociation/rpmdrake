@@ -6,7 +6,7 @@
 
 Name:		rpmdrake
 Version:	5.26.12
-Release:	6
+Release:	7
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
 License:	GPLv2+
@@ -18,6 +18,7 @@ Source0:	%{name}-%{version}.tar.xz
 Patch0:		rpmdrake-5.26.12-drop_update_media_only.patch
 Patch1:		upgrade_info_utf8.patch
 Patch2:		rpmdrake-5.26.12-version-release.patch
+Patch3:		rpmdrake-5.26.12-run-help-callback.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
