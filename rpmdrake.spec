@@ -5,8 +5,8 @@
 %endif
 
 Name:		rpmdrake
-Version:	5.26.12
-Release:	8
+Version:	5.46
+Release:	1
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
 License:	GPLv2+
@@ -14,12 +14,6 @@ Group:		System/Configuration/Packaging
 URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 
 Source0:	%{name}-%{version}.tar.xz
-
-Patch0:		rpmdrake-5.26.12-drop_update_media_only.patch
-Patch1:		upgrade_info_utf8.patch
-Patch2:		rpmdrake-5.26.12-version-release.patch
-Patch3:		rpmdrake-5.26.12-run-help-callback.patch
-Patch4:		rpmdrake-5.26.12-do_not_flush.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
@@ -60,7 +54,6 @@ be run independently or accessed from within rpmdrake.
 
 %prep
 %setup -q
-%apply_patches
 
 %build
 make OPTIMIZE="%{optflags} -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
