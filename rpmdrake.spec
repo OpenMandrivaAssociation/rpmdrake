@@ -5,7 +5,7 @@
 %endif
 
 Name:		rpmdrake
-Version:	5.46
+Version:	5.47
 Release:	1
 
 Summary:	Mandriva Linux graphical front end for sofware installation/removal
