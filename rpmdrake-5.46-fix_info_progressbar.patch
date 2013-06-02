@@ -1,0 +1,12 @@
+diff -Nur rpmdrake-5.46-old/Rpmdrake/pkg.pm rpmdrake-5.46/Rpmdrake/pkg.pm
+--- rpmdrake-5.46-old/Rpmdrake/pkg.pm	2013-06-02 12:16:55.628965184 +0200
++++ rpmdrake-5.46/Rpmdrake/pkg.pm	2013-06-02 12:17:56.634985811 +0200
+@@ -215,7 +215,7 @@
+         );
+         $gurpm->progress($percent/100);
+     } elsif ($mode eq 'end') {
+-        $gurpm->set_progressbar(1);
++        $gurpm->progress(1);
+         $gurpm->invalidate_cancel;
+     }
+     !$canceled;
