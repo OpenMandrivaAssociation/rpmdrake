@@ -6,9 +6,9 @@
 
 Name:		rpmdrake
 Version:	5.46
-Release:	3
+Release:	4
 
-Summary:	Mandriva Linux graphical front end for sofware installation/removal
+Summary:	%{distribution} graphical front end for sofware installation/removal
 License:	GPLv2+
 Group:		System/Configuration/Packaging
 URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
@@ -41,7 +41,7 @@ Requires:	desktop-common-data
 Provides:	MandrakeUpdate
 
 %description
-This package contains the Mandriva graphical software manipulation
+This package contains the %{distribution} graphical software manipulation
 tools.
 
 Rpmdrake provides a simple interface that makes it easy to install
