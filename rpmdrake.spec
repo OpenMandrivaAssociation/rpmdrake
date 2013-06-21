@@ -8,12 +8,13 @@ Name:		rpmdrake
 Version:	5.49
 Release:	1
 
-Summary:	Mandriva Linux graphical front end for sofware installation/removal
+Summary:	%{distribution} graphical front end for sofware installation/removal
 License:	GPLv2+
 Group:		System/Configuration/Packaging
 URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 
 Source0:	%{name}-%{version}.tar.xz
+Patch1:		rpmdrake-5.46-fix_info_progressbar.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
@@ -40,7 +41,7 @@ Requires:	desktop-common-data
 Provides:	MandrakeUpdate
 
 %description
-This package contains the Mandriva graphical software manipulation
+This package contains the %{distribution} graphical software manipulation
 tools.
 
 Rpmdrake provides a simple interface that makes it easy to install
@@ -54,6 +55,7 @@ be run independently or accessed from within rpmdrake.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 make OPTIMIZE="%{optflags} -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
