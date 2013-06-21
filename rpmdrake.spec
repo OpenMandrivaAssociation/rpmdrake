@@ -14,7 +14,6 @@ Group:		System/Configuration/Packaging
 URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 
 Source0:	%{name}-%{version}.tar.xz
-Patch1:		rpmdrake-5.46-fix_info_progressbar.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
@@ -55,7 +54,6 @@ be run independently or accessed from within rpmdrake.
 
 %prep
 %setup -q
-%apply_patches
 
 %build
 make OPTIMIZE="%{optflags} -Wall" PREFIX=%{_prefix} INSTALLDIRS=vendor
