@@ -16,6 +16,7 @@ URL:		http://wiki.mandriva.com/en/Installing_and_removing_software
 Source0:	%{name}-%{version}.tar.xz
 Patch1:		rpmdrake-5.46-fix_info_progressbar.patch
 Patch2:     rpmdrake-5.46-official.patch
+Patch3:	    rpmdrake-5.46-mirrorsite.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
