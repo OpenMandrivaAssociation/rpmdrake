@@ -6,7 +6,7 @@
 
 Name:		rpmdrake
 Version:	5.46
-Release:	6
+Release:	7
 
 Summary:	%{distribution} graphical front end for sofware installation/removal
 License:	GPLv2+
@@ -17,6 +17,7 @@ Source0:	%{name}-%{version}.tar.xz
 Patch1:		rpmdrake-5.46-fix_info_progressbar.patch
 Patch2:     rpmdrake-5.46-official.patch
 Patch3:	    rpmdrake-5.46-mirrorsite.patch
+Patch4:     rpmdrake-5.26.12.update_all_repos.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
