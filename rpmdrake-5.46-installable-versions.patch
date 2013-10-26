@@ -1,0 +1,11 @@
+--- rpmdrake-5.46/Rpmdrake/pkg.pm.orig	2013-10-26 19:38:50.920832658 +0100
++++ rpmdrake-5.46/Rpmdrake/pkg.pm	2013-10-26 19:39:55.174835258 +0100
+@@ -524,7 +524,7 @@
+         update_pbar($gurpm);
+ 	$pkg->flag_upgrade or next;
+ 	my $key = $pkg->name . $pkg->arch;
+-	$l{$key} = $pkg if !$l{$key} || $l{$key}->compare($pkg);
++	$l{$key} = $pkg if !$l{$key} || ($l{$key}->compare($pkg->EVR) == -1);
+     }
+     my @installable_pkgs = map { my $n = $_->fullname; $all_pkgs{$n} = { pkg => $_ }; $n } values %l;
+     undef %l;
