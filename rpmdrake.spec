@@ -6,7 +6,7 @@
 
 Name:		rpmdrake
 Version:	5.46
-Release:	8
+Release:	9
 
 Summary:	%{distribution} graphical front end for sofware installation/removal
 License:	GPLv2+
@@ -18,7 +18,10 @@ Patch1:		rpmdrake-5.46-fix_info_progressbar.patch
 Patch2:     rpmdrake-5.46-official.patch
 Patch3:	    rpmdrake-5.46-mirrorsite.patch
 Patch4:     rpmdrake-5.26.12.update_all_repos.patch
+# Fix display of old version if newer one exists
 Patch5:     rpmdrake-5.46-installable-versions.patch
+# Fix viewing details of gpgkeys
+Patch6:     rpmdrake-5.46-gpgkey-details.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
