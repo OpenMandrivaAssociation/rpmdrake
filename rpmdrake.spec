@@ -6,7 +6,7 @@
 
 Name:		rpmdrake
 Version:	5.46
-Release:	13
+Release:	14
 
 Summary:	%{distribution} graphical front end for sofware installation/removal
 License:	GPLv2+
