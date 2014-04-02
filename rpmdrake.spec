@@ -7,7 +7,7 @@
 Summary:	%{distribution} graphical front end for sofware installation/removal
 Name:		rpmdrake
 Version:	5.46
-Release:	15
+Release:	16
 License:	GPLv2+
 Group:		System/Configuration/Packaging
 Url:		http://wiki.mandriva.com/en/Installing_and_removing_software
@@ -21,6 +21,7 @@ Patch5:		rpmdrake-5.46-installable-versions.patch
 # Fix viewing details of gpgkeys
 Patch6:		rpmdrake-5.46-gpgkey-details.patch
 Patch7:		rpmdrake-5.46-about.patch
+Patch8:		rpmdrake-5.46-update_req.patch
 BuildArch:	noarch
 
 BuildRequires:	gettext 
