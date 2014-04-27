@@ -1,0 +1,86 @@
+commit c414c62222e58b63c5b4dc3b1cbde86bc0525e72
+Author: Crispin Boylan <crisb@mandriva.org>
+Date:   Sun Apr 27 02:24:09 2014 +0100
+
+    Add toggle for showing group icons, defaulting to off
+
+diff --git a/Rpmdrake/gui.pm b/Rpmdrake/gui.pm
+index e95d775..a3911e5 100644
+--- a/Rpmdrake/gui.pm
++++ b/Rpmdrake/gui.pm
+@@ -425,7 +425,8 @@ sub add_parent {
+     my $s; foreach (split '\|', $root) {
+         my $s2 = $s ? "$s|$_" : $_;
+         $wtree{$s2} ||= do {
+-            my $pixbuf = get_icon($s2, $s);
++            my $pixbuf;
++	    $pixbuf = get_icon($s2, $s) if $show_group_icons->[0];
+             my $iter = $w->{tree_model}->append_set($s ? add_parent($s, $state) : undef,
+                                                     [ $grp_columns{label} => $_, if_($pixbuf, $grp_columns{icon} => $pixbuf) ]);
+             $iter;
+diff --git a/rpmdrake b/rpmdrake
+index 3d00f6c..bce0596 100755
+--- a/rpmdrake
++++ b/rpmdrake
+@@ -540,6 +540,7 @@ sub run_treeview_dialog {
+     my $updates_string = N("/_Options") . N("/_Compute updates on startup");
+     my $NVR_string = N("/_Options") . "/" . N("Search in _full package names");
+     my $regexp_search_string = N("/_Options") . "/" . N("Use _regular expressions in searches");
++    my $show_group_icons_string = N("/_Options") . "/" . N("Show _icons in group names");
+     my ($menu, $factory) = create_factory_menu(
+ 	$w->{real_window},
+ 	[ N("/_File"), undef, undef, undef, '<Branch>' ],
+@@ -620,6 +621,11 @@ sub run_treeview_dialog {
+ 	    [ $regexp_search_string, undef, sub {
+                 $use_regexp->[0] = $check_boxes{$regexp_search_string}->get_active;
+ 	    }, undef, '<CheckItem>' ],
++            [ $show_group_icons_string, undef, sub {
++                $show_group_icons->[0] = $check_boxes{$show_group_icons_string}->get_active;
++		$options->{rebuild_tree}->();
++            }, undef, '<CheckItem>' ],
++
+ 	),
+ 	[ N("/_View"), undef, undef, undef, '<Branch>' ],
+         (map {
+@@ -674,9 +680,11 @@ sub run_treeview_dialog {
+        $force_req_update_string, 
+        $NVR_string, 
+        $updates_string, 
+-       $regexp_search_string);
++       $regexp_search_string,
++       $show_group_icons_string);
+ 
+     if (!$>) {
++        $check_boxes{$show_group_icons_string}->set_active($show_group_icons->[0]);
+         $check_boxes{$regexp_search_string}->set_active($use_regexp->[0]);
+         $check_boxes{$NVR_string}->set_active($NVR_searches->[0]);
+         $check_boxes{$auto_select_string}->set_active($auto_select->[0]);
+diff --git a/rpmdrake.pm b/rpmdrake.pm
+index 3467950..bad9748 100644
+--- a/rpmdrake.pm
++++ b/rpmdrake.pm
+@@ -66,6 +66,7 @@ our @EXPORT = qw(
+     $clean_cache
+     $auto_select
+     $force_req_update
++    $show_group_icons
+     add_distrib_update_media
+     add_medium_and_check
+     but
+@@ -176,7 +177,7 @@ our $auto_select;
+ # try to update required packages
+ our $force_req_update;
+ 
+-our ($changelog_first_config, $compute_updates, $filter, $max_info_in_descr, $mode, $NVR_searches, $tree_flat, $tree_mode, $use_regexp);
++our ($changelog_first_config, $compute_updates, $filter, $max_info_in_descr, $mode, $NVR_searches, $tree_flat, $tree_mode, $use_regexp, $show_group_icons);
+ our ($mandrakeupdate_wanted_categories, $ignore_debug_media, $offered_to_add_sources, $no_confirmation);
+ our ($rpmdrake_height, $rpmdrake_width, $mandrivaupdate_height, $mandrivaupdate_width);
+ 
+@@ -211,6 +212,7 @@ our %config = (
+     tree_flat => { var => \$tree_flat, default => [ 0 ] },
+     tree_mode => { var => \$tree_mode, default => [ qw(gui_pkgs) ] },
+     use_regexp => { var => \$use_regexp, default => [ 0 ] },
++    show_group_icons => { var => \$show_group_icons, default => [ 0 ] },
+ );
+ 
+ sub readconf() {
