@@ -6,7 +6,7 @@
 
 Name:		rpmdrake
 Version:	5.46
-Release:	15
+Release:	16
 Summary:	%{distribution} graphical front end for sofware installation/removal
 License:	GPLv2+
 Group:		System/Configuration/Packaging
@@ -25,6 +25,7 @@ Patch7:	    rpmdrake-5.46-about.patch
 Patch8:     rpmdrake-5.46-update_req.patch
 Patch9:	    rpmdrake-5.46-locale.patch
 Patch10:	rpmdrake-5.46-icons.patch
+Patch11:	rpmdrake-5.46-toggle_group_icons.patch
 
 BuildRequires:	gettext 
 BuildRequires:	perl-devel
