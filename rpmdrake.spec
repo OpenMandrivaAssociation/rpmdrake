@@ -6,7 +6,7 @@
 
 Summary:	%{distribution} graphical front end for sofware installation/removal
 Name:		rpmdrake
-Version:	6.10
+Version:	6.11
 Release:	1
 License:	GPLv2+
 Group:		System/Configuration/Packaging
