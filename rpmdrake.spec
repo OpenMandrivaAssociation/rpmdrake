@@ -27,11 +27,9 @@ Requires:	perl-Gtk3
 Requires:	perl-Locale-gettext >= 1.05-6
 Requires:	perl-URPM >= 3.07-2
 # lazy load modules:
-Requires:	perl-Gtk2-SourceView2
 Requires:	perl-File-MimeInfo
 Requires:	urpmi > 6.18
-# need the consolehelper basic pam config files
-Requires:	usermode-consoleonly
+Requires:	polkit
 # for translations:
 Suggests:	mdv-rpm-summary
 Provides:	MandrakeUpdate
