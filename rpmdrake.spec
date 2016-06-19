@@ -6,8 +6,8 @@
 
 Summary:	%{distribution} graphical front end for sofware installation/removal
 Name:		rpmdrake
-Version:	6.00
-Release:	2
+Version:	6.01
+Release:	1
 License:	GPLv2+
 Group:		System/Configuration/Packaging
 Url:		http://wiki.mandriva.com/en/Installing_and_removing_software
@@ -77,7 +77,7 @@ done
 %make check
 
 %files -f rpmdrake.lang
-%doc AUTHORS COPYING NEWS README 
+%doc AUTHORS COPYING NEWS README
 %{_bindir}/OnlineUpdate
 %{_bindir}/drakrpm
 %{_bindir}/edit-urpm-sources.pl
@@ -104,4 +104,3 @@ done
 %{_iconsdir}/hicolor/16x16/apps/*.png
 %{_iconsdir}/hicolor/32x32/apps/*.png
 %{_iconsdir}/hicolor/48x48/apps/*.png
-
