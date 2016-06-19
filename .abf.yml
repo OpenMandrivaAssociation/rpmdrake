@@ -1,4 +1,2 @@
-removed_sources:
-  rpmdrake-5.46.tar.xz: 536cd34925c5b38a80e88d78d17d3698a5930be7
 sources:
-  rpmdrake-6.00.tar.xz: 4e2548bc49247e3016ebc3673fda239a6cbdc801
+  rpmdrake-6.00.tar.xz: bba9c134bda9afde78d4849db8eca9f7998021c9

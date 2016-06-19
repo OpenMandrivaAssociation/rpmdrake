@@ -7,7 +7,7 @@
 Summary:	%{distribution} graphical front end for sofware installation/removal
 Name:		rpmdrake
 Version:	6.00
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Configuration/Packaging
 Url:		http://wiki.mandriva.com/en/Installing_and_removing_software
