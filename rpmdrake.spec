@@ -7,7 +7,7 @@
 Summary:	%{distribution} graphical front end for sofware installation/removal
 Name:		rpmdrake
 Version:	6.01
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Configuration/Packaging
 Url:		http://wiki.mandriva.com/en/Installing_and_removing_software
@@ -30,6 +30,7 @@ Requires:	perl-URPM >= 3.07-2
 Requires:	perl-File-MimeInfo
 Requires:	urpmi > 6.18
 Requires:	polkit
+Requires:	typelib(GtkSource) = 3.0
 # for translations:
 Suggests:	mdv-rpm-summary
 Provides:	MandrakeUpdate
